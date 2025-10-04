@@ -43,12 +43,13 @@ This repository serves as a collection of homework assignments and code develope
 ## 🛠 Contents
 
 Folders and files are organized per assignment or topic. Sample structure:
+  ```plaintext
 /
-├── HW1
-│ └── golden.m
-├── HW2
-│ ├── quadratic_interp.m
-│ └── cubic_interp.m
-├── HW3
-│ └── steepest_descent.m
+├── HW1_GoldenSection/
+│   └── golden.m                  % Golden Section Search
+├── HW2_LineSearch/
+│   ├── quadratic_interp.m        % Quadratic Interpolation
+│   └── cubic_interp.m            % Cubic Interpolation
+├── HW3_SteepestDescent/
+│   └── steepest_descent.m        % Steepest Descent Method
 ├── README.md
