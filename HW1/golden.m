@@ -1,3 +1,5 @@
+% LAST MODIFIED 4 OCT 2025
+
 function [xmin, fmin, IFLAG, IFunc] = golden(a, b, epsilon, itmax)
 % GOLDEN  One-dimensional minimization by golden-section search (derivative-free).
 %
