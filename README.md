@@ -1,5 +1,5 @@
 # 2102509-Introduction-to-Optimization-Techniques
-Homework Code
+`Homework Code`
 # 2102509 - Introduction to Optimization Techniques (2568)
 
 This repository contains code and assignments submitted for the course **2102509 - Introduction to Optimization Techniques** during the academic year **2025**.
