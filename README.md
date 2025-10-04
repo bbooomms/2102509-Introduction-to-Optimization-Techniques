@@ -43,4 +43,12 @@ This repository serves as a collection of homework assignments and code develope
 ## 🛠 Contents
 
 Folders and files are organized per assignment or topic. Sample structure:
-
+/
+├── HW1
+│ └── golden.m
+├── HW2
+│ ├── quadratic_interp.m
+│ └── cubic_interp.m
+├── HW3
+│ └── steepest_descent.m
+├── README.md
