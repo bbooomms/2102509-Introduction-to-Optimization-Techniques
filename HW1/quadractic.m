@@ -1,3 +1,5 @@
+% LAST MODIFIED 4 OCT 2025
+
 function [xmin, fmin, IFLAG, IFunc] = quadractic(a, b, epsilon, itmax)
     % QUADRRACTIC  One-dimensional minimization by Quadratic Interpolation
     %
