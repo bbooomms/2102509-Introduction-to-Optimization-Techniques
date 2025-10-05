@@ -1,4 +1,4 @@
-clc; clear; close all;
+clc; clear
 
 f  = @(x) x.^5 - 5*x.^3 - 20*x + 5; % define function
 df = @(x) 5*x.^4 - 15*x.^2 - 20; % derivative
