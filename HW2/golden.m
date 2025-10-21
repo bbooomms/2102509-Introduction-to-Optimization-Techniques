@@ -1,4 +1,4 @@
-function [xmin, fmin, IFLAG, IFunc] = golden(a, b, epsilon, itmax)
+function [xmin, fmin, IFLAG, IFunc] = golden(f, a, b, epsilon, itmax)
 % GOLDEN  One-dimensional minimization by golden-section search (derivative-free).
 %
 % DEVELOPED BY PHUBET SUWANNO 6530316021 (BOOM)
@@ -62,38 +62,29 @@ function [xmin, fmin, IFLAG, IFunc] = golden(a, b, epsilon, itmax)
     % IFLAG = 1    → reached max iterations
     % IFLAG = -999 → error (i.e. input are not valid)
 
-    % --- เช็ค input ก่อน ---
+    % Invalid input
     if a >= b || epsilon <= 0 || itmax <= 0
-        xmin = NaN; fmin = NaN;
-        IFLAG = -999;
-        IFunc = 0;
+        xmin = NaN; fmin = NaN; IFLAG = -999; IFunc = 0;
         return;
     end
 
-    golden_ratio = (sqrt(5)-1)/2;
-    x1 = b - golden_ratio * (b - a);
-    x2 = a + golden_ratio * (b - a);
+    gr = (sqrt(5)-1)/2;
+    x1 = b - gr*(b-a);
+    x2 = a + gr*(b-a);
 
     k = 0;
-    % header print
-    fprintf('Iter |        a             b         |         x1            x2        |     f(x1)          f(x2)\n');
-    fprintf('-------------------------------------------------------------------------------------------------\n');
-
     while (abs(b-a) > epsilon && k < itmax)
         k = k + 1;
 
         if f(x2) > f(x1)
             b = x2;
             x2 = x1;
-            x1 = b - golden_ratio * (b - a);
+            x1 = b - gr*(b-a);
         else
             a = x1;
             x1 = x2;
-            x2 = a + golden_ratio * (b - a);
+            x2 = a + gr*(b-a);
         end
-        % print this iteration
-        fprintf('%4d | %13.6e  %13.6e | %13.6e  %13.6e | %13.6e  %13.6e\n', ...
-        k, a, b, x1, x2, f(x1), f(x2));
     end
 
     xmin = (a+b)/2;
@@ -101,9 +92,8 @@ function [xmin, fmin, IFLAG, IFunc] = golden(a, b, epsilon, itmax)
     IFunc = k;
 
     if abs(b-a) <= epsilon
-        IFLAG = 0;  % converged
+        IFLAG = 0; % converged
     else
-        IFLAG = 1;  % reached max iterations
+        IFLAG = 1; % max iter
     end
-
 end
